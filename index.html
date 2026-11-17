@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Folio</title>
+</head>
+<body>
+  <main>
+    <h1>Folio</h1>
+    <p><a id="open-folio" href="https://folio-cloudflare-pilot.folio-latex-workspace.workers.dev/">Folio LaTeX editörünü aç</a></p>
+  </main>
+  <script>
+    const link = document.querySelector('#open-folio');
+    const target = new URL(link.href);
+    if (/^#invite=(?:[a-f0-9]{64}|[A-Za-z0-9_-]{32})$/.test(location.hash)) {
+      target.hash = location.hash;
+    }
+    link.href = target.href;
+    location.replace(target.href);
+  </script>
+</body>
+</html>
