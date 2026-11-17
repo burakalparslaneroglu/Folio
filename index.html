@@ -14,7 +14,7 @@
   <script>
     const link = document.querySelector('#open-folio');
     const target = new URL(link.href);
-    if (/^#(?:invite=(?:[a-f0-9]{64}|[A-Za-z0-9_-]{32})|signup=[A-Za-z0-9_-]{32})$/.test(location.hash)) {
+    if (/^#(?:invite=(?:[a-f0-9]{64}|[A-Za-z0-9_-]{32})|signup=[A-Za-z0-9_-]{32}|login=(?:admin|[A-Za-z0-9_-]{32}))$/.test(location.hash)) {
       target.hash = location.hash;
     }
     link.href = target.href;
